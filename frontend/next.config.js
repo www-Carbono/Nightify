@@ -11,7 +11,8 @@ const nextConfig = {
     },
     env : {
         URL : process.env.URL
-    }
+    },
+    distDir: 'out'
 }
 
 module.exports = nextConfig
