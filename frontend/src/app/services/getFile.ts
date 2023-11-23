@@ -1,4 +1,4 @@
-'use server'
+'use client'
 import { type info } from '../components/types'
 
 const handleFetch = async (url: string, params: Record<string, any>): Promise<any> => {
