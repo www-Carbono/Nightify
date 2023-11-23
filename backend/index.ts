@@ -60,7 +60,7 @@ app.post('/convertSong', (req, res) => {
               fileName: randomName
             })
           })
-        }, 1000)
+        }, 5000)
       })
 
       .catch((err) => {
