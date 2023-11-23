@@ -36,6 +36,10 @@ app.post('/convertSong', (req, res) => {
           const PATH_OUTPUT = path.join(UPLOADS_FOLDER, randomName)
 
           const command = `ffmpeg -i ${PATH_TEMP}${FILE_EXTENSION} -af asetrate=44100*${pitch},aresample=44100,atempo=${tempo} ${PATH_OUTPUT}${FILE_EXTENSION}`
+          console.log('Command', command)
+          console.log('PATHOUTPUT', PATH_OUTPUT)
+          console.log('PATH_TEMP', PATH_TEMP)
+          console.log('randomName', randomName)
           const commandParts = command.split(' ')
           const spawnedProcess = spawn(commandParts[0], commandParts.slice(1))
 
@@ -54,7 +58,7 @@ app.post('/convertSong', (req, res) => {
             }
 
             fs.unlink(`${TEMP_FOLDER}/${randomName}${FILE_EXTENSION}`, () => {})
-
+            console.log('SongName', SongName)
             return res.status(200).json({
               nombre: SongName[0],
               fileName: randomName
