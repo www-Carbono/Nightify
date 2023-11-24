@@ -107,7 +107,7 @@ const youtubeSearch = async (name: string): Promise<any> => {
 }
 
 app.listen(PORT, () => {
-  console.log('Servidor Iniciado.')
+  console.log('Servidor Iniciado. PUERTO: ', PORT)
 })
 
 const downloadVideo = async (link: string, randomName: string, SongName: string[]): Promise<void> => {

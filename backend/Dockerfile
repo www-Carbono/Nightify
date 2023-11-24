@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18
 
 
 WORKDIR /backend
@@ -11,8 +11,6 @@ RUN apt-get install -y ffmpeg
 RUN apt-get clean 
 RUN apt-get install -y ffmpeg
 
-
-
-
+EXPOSE 3000
 
 CMD  ["npm" , "start"]
