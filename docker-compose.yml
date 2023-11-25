@@ -1,0 +1,41 @@
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - ./docker/certs:/etc/nginx/certs:ro
+
+  ssl-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: ssl-companion
+    volumes:
+      - ./docker/certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - proxy
+    depends_on:
+      - proxy
+
+  frontend:
+     image: nightifyfrontend
+     container_name: nightifyfrontend
+     environment:
+        - VIRTUAL_HOST=nightify.dev,www.nightify.dev
+        - VIRTUAL_PORT=3010
+        - LETSENCRYPT_HOST=nightify.dev,www.nightify.dev
+        - LETSENCRYPT_EMAIL=dev.nightify@gmail.com
+
+  backend:
+     image: nightifybackend
+     container_name: nightifybackend
+     environment:
+        - VIRTUAL_HOST=api.nightify.dev
+        - VIRTUAL_PORT=3011
+        - LETSENCRYPT_HOST=api.nightify.dev
+        - LETSENCRYPT_EMAIL=dev.nightify@gmail.com
