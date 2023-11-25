@@ -11,6 +11,6 @@ RUN apt-get install -y ffmpeg
 RUN apt-get clean 
 RUN apt-get install -y ffmpeg
 
-EXPOSE 3000
+EXPOSE 3011
 
 CMD  ["npm" , "start"]

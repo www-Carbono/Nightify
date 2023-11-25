@@ -10,9 +10,9 @@ RUN npm install
 
 COPY . /frontend
 
-RUN npm build
+RUN npm run  build
 
-EXPOSE 3000
+EXPOSE 3010
 
 CMD [ "npm", "start" ]
 
