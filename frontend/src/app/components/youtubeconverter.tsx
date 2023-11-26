@@ -38,11 +38,11 @@ const YoutubeConverter: React.FC<prueba> = ({ downloadInfo, loaded, sendSong, se
           if (rec.type === 'video') {
             return (
 
-              <div className='flex flex-row items-center my-2 py-3 px-10 bg-white mx-10 rounded-xl gap-10 cursor-pointer hover:bg-gray-200' key={rec.id} onClick={(e) => { setSelected(rec.url); search.data = undefined }}>
-                <Image src={rec.bestThumbnail.url} alt={rec.title} width={128} height={128} className='rounded-md' style={{ width: 170, height: 'auto' }}/>
+              <div className='flex flex-col items-center bg-white  rounded-xl gap-5 cursor-pointer hover:bg-gray-200 border-solid border-2 m-6 efecto sm:flex-row sm:items-center sm:justify-start' key={rec.id} onClick={(e) => { setSelected(rec.url); search.data = undefined }}>
+                <Image src={rec.bestThumbnail.url} alt={rec.title} width={128} height={128} className='rounded-md mt-4 sm:m-2' style={{ width: 210, height: 128 }}/>
                 <div>
-              <p>{rec.title}</p>
-              <p>Duracion:{rec.duration}</p>
+              <p className='text-center text-sm sm:text-base sm:text-start'>{rec.title}</p>
+              <p className='text-center mb-5 text-sm sm:text-sm sm:text-start'>Duracion:{rec.duration}</p>
 
                 </div>
             </div>

@@ -7,11 +7,11 @@ interface props {
 
 const TabsSongConverter: React.FC<props> = ({ uploadType, handleClick }) => {
   return (
-        <div className='flex flex-row button '>
-        <p onClick={(e) => { handleClick(e) }} className='pb-3  button' style={uploadType
-          ? { boxShadow: '2px 2px 0px 0px #000', fontWeight: 'bold' }
-          : { boxShadow: '2px 2px 0px 0px #CEFF1A', fontWeight: 'normal' }}>Copiar Link Youtube</p>
-        <p onClick={(e) => { handleClick(e) }} className='pb-3 button mx-5'style={!uploadType ? { boxShadow: '2px 2px 0px 0px #000', fontWeight: 'bold' } : { boxShadow: '2px 2px 0px 0px #CEFF1A', fontWeight: 'normal' }}>Buscar Por Nombre</p>
+        <div className='flex flex-col button xl:flex-row'>
+        <p onClick={(e) => { handleClick(e) }} className='pb-3 mb-5 button text-center hover:bg-gray-200 ' style={uploadType
+          ? { boxShadow: '2px 2px 0px 0px #000', fontWeight: 'bold', backgroundColor: 'rgb(229 231 235)' }
+          : { boxShadow: '2px 2px 0px 0px #fff', fontWeight: 'normal' }}>Copiar Link Youtube</p>
+        <p onClick={(e) => { handleClick(e) }} className='pb-3 mb-5 button text-center hover:bg-gray-200'style={!uploadType ? { boxShadow: '2px 2px 0px 0px #000', fontWeight: 'bold', backgroundColor: 'rgb(229 231 235)' } : { boxShadow: '2px 2px 0px 0px #fff', fontWeight: 'normal' }}>Buscar Por Nombre</p>
         </div>
   )
 }

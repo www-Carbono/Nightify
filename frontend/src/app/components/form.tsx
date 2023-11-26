@@ -38,14 +38,13 @@ const FormConverter: React.FC<props> = ({ sendSong, placeholder, sendSongYoutube
 
   if (placeholder === 'Escribe el Nombre de tu Cancion') {
     return (
-        // <form className='flex flex-col items-center justify-center text-center' onSubmit={(e) => { sendSong(e, true) } }>
         <form className='flex flex-col items-center justify-center text-center' onSubmit={(e) => { youtubeInfo(e) }}>
         <label className='font-bold mt-5'>Escribe el Nombre de la cancion:</label>
         <input
           name="songLink"
           type="text"
           placeholder={placeholder}
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-[70%] mt-5"
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-[90%] mt-5"
         />
 
         <h3 className='pt-5 flex flex-row items-center cursor-pointer' onClick={toggleAdvancedOptions}><svg className='mx-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>Opciones Avanzadas</h3>
@@ -67,7 +66,7 @@ const FormConverter: React.FC<props> = ({ sendSong, placeholder, sendSongYoutube
 
         </div>
 
-        <button className='mb-5 hover:bg-[#fff]'>Buscar</button>
+        <button className='mb-5 hover:bg-gray-200'>Buscar</button>
 
         </form>
     )
@@ -80,7 +79,7 @@ const FormConverter: React.FC<props> = ({ sendSong, placeholder, sendSongYoutube
         name="songLink"
         type="text"
         placeholder={placeholder}
-        className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-[70%] mt-5"
+        className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-[90%] mt-5"
       />
 
       <h3 className='pt-5 flex flex-row items-center cursor-pointer' onClick={toggleAdvancedOptions}><svg className='mx-2' xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>Opciones Avanzadas</h3>
@@ -102,7 +101,7 @@ const FormConverter: React.FC<props> = ({ sendSong, placeholder, sendSongYoutube
 
       </div>
 
-      <button className='mb-5 hover:bg-[#fff]'>Enviar</button>
+      <button className='mb-5 hover:bg-gray-200'>Enviar</button>
 
       </form>
   )

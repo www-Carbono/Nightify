@@ -2,16 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.header{
-  background: #FFF7F0;
-}
-
-
 .title{
   color: #49DBC8;
   text-align: center;
   text-shadow: 0px 8px 0px #000;
-  font-size: 72px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -32,7 +26,7 @@ line-height: 28px; /* 140% */
 button{
   border-radius: 8px;
   border: 1px solid #000;
-  background: #CEFF1A;
+  background: #fff;
   box-shadow: 4px 4px 0px 0px #000;
   width: 178px;
   height: 46px;
@@ -46,7 +40,7 @@ button{
 
 .button{
   border-radius: 8px;
-  background: #CEFF1A;
+  background: #fff;
   padding: 5px 14px;
   flex-shrink: 0;
   font-weight: bold;
@@ -57,7 +51,7 @@ button{
 .button p{
   border-radius: 8px;
   border: 1px solid #000;
-  background: #CEFF1A;
+  background: #fff;
   padding: 5px 14px;
   flex-shrink: 0;
   font-weight: bold;
@@ -67,7 +61,6 @@ button{
 border: 1px solid #000;
 background: #CEFF1A;
 display: inline-flex;
-transform: rotate(-10deg);
 padding: 14px 32px;
 justify-content: center;
 align-items: center;
@@ -87,8 +80,8 @@ line-height: 28px; /* 140% */
 .boxService{
   border-radius: 24px;
 border: 1px solid #000;
-width: 380.9104px;
-height: 240.9792px;
+/* max-width: 380.9104px;
+max-height: 240.9792px; */
 flex-shrink: 0;
 background: var(--white-white, #FFF);
 box-shadow: 6px 6px 0px 0px #000;
@@ -98,10 +91,9 @@ box-shadow: 6px 6px 0px 0px #000;
   border-radius: 24px;
 border: 1px solid #000;
 flex-shrink: 0;
-background: var(--white-white, #FFF);
 box-shadow: 6px 6px 0px 0px #000;
 overflow: hidden;
-background-color: #CEFF1A;
+background-color: #fff
 }
 
 
@@ -114,16 +106,9 @@ background-color: #CEFF1A;
   width: 100%;
 }
 
-.separadorText{
-  color: #CEFF1A;
-
-text-align: center;
-/* Headline/Semibold/H6 */
+.workSans{
 font-family: Work Sans;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: 28px; /* 140% */
+
 }
 
 .dot-spinner {
@@ -257,4 +242,13 @@ margin-bottom: 20px;
   height: 48px;
   width: 48px;
   margin: 10px;
+}
+
+
+.efecto{
+  border: 1px solid #000;
+
+  background: var(--white-white, #FFF);
+  box-shadow: 4px 4px 0px 0px #000;
+
 }

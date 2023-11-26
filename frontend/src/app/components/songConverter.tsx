@@ -14,7 +14,7 @@ const SongConverter: React.FC = () => {
 
   return (
   <div className='flex justify-center'>
-    <div className='boxServiceStart w-[50%] m-20'>
+    <div className='boxServiceStart m-20 w-4/5 h-fit xl:w-3/5 2xl:w-2/5'>
       <TabsSongConverter uploadType={uploadType} handleClick={handleClick}/>
       {
         error.length > 0 &&

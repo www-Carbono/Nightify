@@ -12,8 +12,8 @@ const DownloadSong: React.FC<props> = ({ downloadInfo }) => {
   return (
     downloadInfo !== null &&
         <div className='flex flex-col items-center justify-center text-center my-5 '>
-        <h3 className='font-bold'>{downloadInfo.nombre}</h3>
-          <p>Descargar Cancion: <Link href={`${process.env.URL}/download/${downloadInfo.fileName}`} className='font-bold pb-5'>Click Aquí</Link> </p>
+        <h3 className='font-bold text-sm mb-2'>{downloadInfo.nombre}</h3>
+          <p className='text-sm'>Descargar Cancion: <Link href={`${process.env.URL}/download/${downloadInfo.fileName}`} className='font-bold pb-5'>Click Aquí</Link> </p>
           <audio
       controls
       src={`${process.env.URL}/download/${downloadInfo.fileName}`}

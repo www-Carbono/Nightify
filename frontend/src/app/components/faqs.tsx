@@ -2,7 +2,9 @@ import React from 'react'
 import Faq from './faq'
 const Faqs: React.FC = () => {
   return (
-        <div className='flex flex-col mt-10 faqsContainer mx-[30%] '>
+    <div className='flex justify-center'>
+
+        <div className='flex flex-col mt-10 faqsContainer bg-white w-4/5 md:w-[60%] lg:w-3/5 xl:w-3/5 2xl:w-2/5 '>
 
             <Faq question='¿Cómo puedo convertir una canción a nightcore en Nightify?' answer='Puedes convertir una canción a nightcore de dos maneras: simplemente copiando y pegando el enlace de YouTube en la barra de búsqueda, o escribiendo el nombre de la canción directamente. Luego, ajusta las preferencias de velocidad y tono según tu gusto antes de realizar la conversión.'/>
             <Faq question='¿Necesito una cuenta para utilizar Nightify?' answer='No es necesario tener una cuenta para convertir canciones a nightcore en Nightify.'/>
@@ -10,7 +12,8 @@ const Faqs: React.FC = () => {
             <Faq question='¿Cada cuánto tiempo se borran las canciones convertidas en Nightify?' answer='Para evitar la sobrecarga del servidor, las canciones convertidas se borran automáticamente cada 10 minutos. Te recomendamos descargar y guardar tus versiones nightcore dentro de ese período.'/>
             <Faq question='¿Tienen redes sociales donde pueda seguir las actualizaciones de Nightify?' answer='¡Sí! Puedes seguirnos en nuestras redes sociales para recibir las últimas actualizaciones, noticias y contenido exclusivo. Mantente conectado con la comunidad Nightify a través de nuestras redes sociales.'/>
 
-        </div>
+    </div>
+    </div>
   )
 }
 
