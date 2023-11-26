@@ -95,8 +95,13 @@ app.get('/download/:id', (req, res) => {
   }
 
   const file = `${UPLOADS_FOLDER}/${req.params.id}${FILE_EXTENSION}`
-  console.log(file)
-  res.download(file)
+  if (fs.existsSync(file)) {
+    res.download(file)
+    return
+  }
+  return res.status(500).json({
+    error: 'El archivo no existe'
+  })
 })
 
 app.post('/youtubeSearch', (req, res) => {
