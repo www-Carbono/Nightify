@@ -3,7 +3,6 @@ import getFile, { getYoutubeSearch } from '../services/getFile'
 import { useState } from 'react'
 
 import { type info } from '../components/types'
-import { type } from 'os'
 
 const useSongConverter = (): {
   handleClick: (e: React.MouseEvent) => void
