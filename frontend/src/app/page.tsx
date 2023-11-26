@@ -12,6 +12,7 @@ import Faqs from './components/faqs'
 const Home: React.FC = () => {
   return (
 <main className='bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-800 pb-5'>
+
 <div className="container">
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-RXLML0Z4GD" />
       <Script id="google-analytics">
