@@ -26,8 +26,8 @@ const handleFetch = async (url: string, params: Record<string, any>): Promise<an
 
 const getFile = async (
   links: FormDataEntryValue,
-  tempo: FormDataEntryValue,
-  pitch: FormDataEntryValue
+  tempo: number,
+  pitch: number
 ): Promise<info> => {
   const params = { link: links, tempo, pitch }
   return await handleFetch(`${process.env.URL}/convertSong`, params)

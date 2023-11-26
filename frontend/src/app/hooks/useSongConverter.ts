@@ -3,6 +3,7 @@ import getFile, { getYoutubeSearch } from '../services/getFile'
 import { useState } from 'react'
 
 import { type info } from '../components/types'
+import { type } from 'os'
 
 const useSongConverter = (): {
   handleClick: (e: React.MouseEvent) => void
@@ -49,7 +50,7 @@ const useSongConverter = (): {
     const pitch = fields.get('pitch')
 
     if (query !== null && tempo !== null && pitch !== null) {
-      getFile(query, tempo, pitch)
+      getFile(query, Number(tempo), Number(pitch))
         .then(e => { setDownloadInfo(e) })
         .catch(error => { setError('Ha Ocurrido un Error al intentar obtener la canción, vuelve a intentarlo'); console.log(error) })
         .finally(() => { setLoaded(true) })

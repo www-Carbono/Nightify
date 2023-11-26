@@ -34,6 +34,12 @@ app.post('/convertSong', (req, res) => {
         setTimeout(() => {
           const PATH_TEMP = path.join(TEMP_FOLDER, randomName)
           const PATH_OUTPUT = path.join(UPLOADS_FOLDER, randomName)
+          console.log(typeof tempo)
+          if (typeof tempo !== 'number' && typeof pitch !== 'number') {
+            return res.status(500).json({
+              error: 'Only Numbers :)'
+            })
+          }
 
           const command = `ffmpeg -i ${PATH_TEMP}${FILE_EXTENSION} -af asetrate=44100*${pitch},aresample=44100,atempo=${tempo} ${PATH_OUTPUT}${FILE_EXTENSION}`
           console.log('Command', command)
@@ -64,7 +70,7 @@ app.post('/convertSong', (req, res) => {
               fileName: randomName
             })
           })
-        }, 20000)
+        }, 500)
       })
 
       .catch((err) => {
@@ -81,7 +87,15 @@ app.post('/convertSong', (req, res) => {
 })
 
 app.get('/download/:id', (req, res) => {
+  const regex = /^[0-9A-Fa-f]+$/
+  if (!regex.test(req.params.id)) {
+    return res.status(500).json({
+      error: 'No Puedes hacer eso :)'
+    })
+  }
+
   const file = `${UPLOADS_FOLDER}/${req.params.id}${FILE_EXTENSION}`
+  console.log(file)
   res.download(file)
 })
 
