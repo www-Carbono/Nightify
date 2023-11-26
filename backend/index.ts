@@ -113,7 +113,6 @@ app.post('/youtubeSearch', (req, res) => {
       })
     })
     .catch(error => {
-      console.log(error)
       return res.status(500).json({
         prueba: error
       })
@@ -122,6 +121,9 @@ app.post('/youtubeSearch', (req, res) => {
 
 const youtubeSearch = async (name: string): Promise<any> => {
   const searchResults = await ytsr(name)
+  if (searchResults.results === 0) {
+    throw new Error('No hay resultados')
+  }
   return searchResults
 }
 
@@ -137,7 +139,6 @@ const downloadVideo = async (link: string, randomName: string, SongName: string[
       if (regex2.test(link)) {
         ytdl('https://' + link, { filter: 'audioonly' })
           .pipe(fs.createWriteStream(path.join(TEMP_FOLDER, randomName + FILE_EXTENSION)))
-
         const name = await ytdl.getInfo('https://' + link)
         SongName.push(name.videoDetails.title)
       } else {
